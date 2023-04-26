@@ -1,5 +1,5 @@
 # Credit Risk Classification - Module 20
-![credit](https://media.marketrealist.com/brand-img/3s7UQMyYo/0x0/uploads/2019/10/bank-credit-risk.jpg)
+![credit](https://finscience.com/wp-content/uploads/il-ruolo-degli-alternative-data-nel-credit-risk-management-finscience-datrix.jpg)
 
 ## Intro
 In this Challenge, you’ll use various techniques to train and evaluate a model based on loan risk. You’ll use a dataset of historical lending activity from a peer-to-peer lending services company to build a model that can identify the creditworthiness of borrowers.
