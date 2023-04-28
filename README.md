@@ -2,51 +2,41 @@
 ![credit](https://finscience.com/wp-content/uploads/il-ruolo-degli-alternative-data-nel-credit-risk-management-finscience-datrix.jpg)
 
 ## Intro
-In this Challenge, you’ll use various techniques to train and evaluate a model based on loan risk. You’ll use a dataset of historical lending activity from a peer-to-peer lending services company to build a model that can identify the creditworthiness of borrowers.
+In this Challenge, we were to utilize various techniques to train and evaluate a model based on loan risk. We used a dataset of historical lending activity from a peer-to-peer lending services company to build a model that can identify the creditworthiness of borrowers.
 
-## Instruction Overview
+## Analysis
 
-The instructions for this Challenge are divided into the following subsections:
+## Logistics Regression Original Data vs Resampled Training Data
 
-- Split the Data into Training and Testing Sets
-- Create a Logistic Regression Model with the Original Data
-- Predict a Logistic Regression Model with Resampled Training Data
-- Write a Credit Risk Analysis Report
+### Logistics Regression Original Data Classification Report
 
-### Split the Data into Training and Testing Sets
-Open the starter code notebook and use it to complete the following steps:
+- Label 0
+    - Precision: 1.00 
+    - Recall:  0.99 
+    - F1-score: 1.00 
 
-1. Read the lending_data.csv data from the Resources folder into a Pandas DataFrame.
+- Label 1
+    - Precision: 0.85 
+    - Recall:  0.91
+    - F1-score: 0.88
 
-2. Create the labels set (y) from the “loan_status” column, and then create the features (X) DataFrame from the remaining columns.
+### Logistics Regression Resampled Training Data Classification Report
 
-    - NOTE: A value of 0 in the “loan_status” column means that the loan is healthy. A value of 1 means that the loan has a high risk of defaulting.
+- Label 0
+    - Precision: 1.00 
+    - Recall:  0.99 
+    - F1-score: 1.00 
 
-3. Split the data into training and testing datasets by using train_test_split.
+- Label 1
+    - Precision: 0.84 
+    - Recall:  0.99
+    - F1-score: 0.91
 
-### Create a Logistic Regression Model with the Original Data
 
-Use your knowledge of logistic regression to complete the following steps:
 
-1. Fit a logistic regression model by using the training data (X_train and y_train).
+For the original logistic regression model, the results displayed high precision, recall, and f1-score for predicting the 0 label, which indicates healthy loans with 1.00, 0.99, and 1.00 scores respectively. For the 1 label, the model also has decent precision, recall and f1-score with 0.85, 0.91 and 0.88 scores respectively. However, it could be further evaluated with additional metrics and possibly tuned to improve its performance.
 
-2. Save the predictions for the testing data labels by using the testing feature data (X_test) and the fitted model.
+After taking a look into the logistic regression model with resampled training data, we were able to visualize a notable increase for label 1 on especially the recall and f1-score. Label 0 retained the near perfect scores displaying 1.00, 0.99, and 1.00 scores respectively. In label 1 we were able to see the recall jump from a 0.91 to a 0.99 as well as f1-score receiving a bump from 0.88 to 0.91. 
 
-3. Evaluate the model’s performance by doing the following:
-
-    - Calculate the accuracy score of the model.
-    - Generate a confusion matrix.
-    - Print the classification report.
-
-4. Answer the following question: How well does the logistic regression model predict both the 0 (healthy loan) and 1 (high-risk loan) labels?
-
-### Write a Credit Risk Analysis Report
-Write a brief report that includes a summary and analysis of the performance of the machine learning models that you used in this homework. You should write this report as the README.md file included in your GitHub repository.
-
-Structure your report by using the report template that Starter_Code.zip includes, ensuring that it contains the following:
-
-1. An overview of the analysis: Explain the purpose of this analysis.
-
-2. The results: Using a bulleted list, describe the accuracy score, the precision score, and recall score of the machine learning model.
-
-3. A summary: Summarize the results from the machine learning model. Include your justification for recommending the model for use by the company. If you don’t recommend the model, justify your reasoning.
+## Results Overview
+Based on the evaluation results, we do recommend using the logistic regression model with resampled training data for predicting loan risks as it is more effective at distinguishing high-risk loans with high recall accuraccy. However, we should also consider the cost of false positives and false negatives in our recommendation, as well as potential biases in the data and model. It's important to continue monitoring and improving the model's performance over time to ensure its effectiveness and reliability.
